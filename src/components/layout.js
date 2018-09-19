@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
+import config from '../../data/site'
 import Header from './header'
 import './layout.css'
 
@@ -28,7 +29,7 @@ const Layout = ({ children }) => (
           ]}
         >
           <html lang="en" />
-          <meta property="og:image" content="/icons/icon-48x48.png"/>
+          <meta property="og:image" content="https://thirsty-goldberg-be4801.netlify.com/images/fahmiirsyd-512.png"/>
           <base target="_blank" href="https://thirsty-goldberg-be4801.netlify.com" />
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
