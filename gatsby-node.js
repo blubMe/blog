@@ -7,6 +7,7 @@
 // You can delete this file if you're not using it
 
 const path = require(`path`)
+require('dotenv').config()
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
