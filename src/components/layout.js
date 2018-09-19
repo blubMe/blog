@@ -24,9 +24,12 @@ const Layout = ({ children }) => (
           meta={[
             { name: 'description', content: 'my exclusive blog created with ❤️' },
             { name: 'keywords', content: 'fahmiirsyd, programming' },
+            { property: 'og:image' ,content: './../images/gatsby-icon.png'},
+            { property: 'og:type', content: 'article'}
           ]}
         >
           <html lang="en" />
+          <base target="_blank" href="https://thirsty-goldberg-be4801.netlify.com" />
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
