@@ -24,10 +24,10 @@ const Layout = ({ children }) => (
           meta={[
             { name: 'description', content: 'my exclusive blog created with ❤️' },
             { name: 'keywords', content: 'fahmiirsyd, programming' },
-            { name: 'image', content: 'https://thirsty-goldberg-be4801.netlify.com/images/fahmiirsyd-logo.png'},
+            { name: 'image', content: 'https://thirsty-goldberg-be4801.netlify.com/images/fahmiirsyd-logo.jpg'},
             { property: 'og:title', content: 'fahmiirsyd'},
             { property: 'og:description', content: 'my exclusive blog created with ❤️'},
-            { property: 'og:image', content: 'https://thirsty-goldberg-be4801.netlify.com/images/fahmiirsyd-logo.png'},
+            { property: 'og:image', content: 'https://thirsty-goldberg-be4801.netlify.com/images/fahmiirsyd-logo.jpg'},
             { property: 'og:type', content: 'article'}
           ]}
         >
