@@ -1,9 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: 'fahmiirsyd',
+    siteUrl: `https://thirsty-goldberg-be4801.netlify.com/`
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
