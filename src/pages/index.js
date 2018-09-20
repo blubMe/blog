@@ -26,7 +26,6 @@ export const query = graphql`
 `
 
 const IndexPage = ({data}) => {
-  console.log(data)
   const ql = data.allMarkdownRemark
   return (
     <Layout>

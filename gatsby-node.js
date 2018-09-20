@@ -19,7 +19,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
             name: `slug`,
             value: slug
         })
-        // console.log(createFilePath({ node, getNode, basePath: `pages` }))
     }
 }
 
@@ -28,7 +27,7 @@ exports.createPages = ({graphql,actions}) => {
     return new Promise((resolve, reject) => {
         graphql(`
             {
-                allMarkdownRemark {
+                allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
                     edges {
                         node {
                             frontmatter {
