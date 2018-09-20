@@ -19,7 +19,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
             name: `slug`,
             value: slug
         })
-        console.log(createFilePath({ node, getNode, basePath: `pages` }))
+        // console.log(createFilePath({ node, getNode, basePath: `pages` }))
     }
 }
 
@@ -31,6 +31,9 @@ exports.createPages = ({graphql,actions}) => {
                 allMarkdownRemark {
                     edges {
                         node {
+                            frontmatter {
+                                title
+                            }
                             fields {
                                 slug
                             }
@@ -39,7 +42,8 @@ exports.createPages = ({graphql,actions}) => {
                 }
             }
         `).then(result => {
-            result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+            const post = result.data.allMarkdownRemark.edges
+            post.forEach(({ node },index) => {
                 createPage({
                     path: node.fields.slug,
                     component: path.resolve(`./src/templates/blog-post.js`),
@@ -47,6 +51,8 @@ exports.createPages = ({graphql,actions}) => {
                         // Data passed to context is available
                         // in page queries as GraphQL variables.
                         slug: node.fields.slug,
+                        prev: index === 0 ? null : post[index - 1].node,
+                        next: index === (post.length - 1) ? null : post[index + 1].node
                     },
                 })
             })
