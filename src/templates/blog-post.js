@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql,Link } from 'gatsby'
 import Helmet from "react-helmet"
 
 import config from '../../data/site'
@@ -17,8 +17,10 @@ export const query = graphql`
     }
   }`
 
-export default ({data}) => {
+export default ({data, pageContext}) => {
     const post = data.markdownRemark
+    console.log(pageContext)
+    const {prev,next} = pageContext
     return (
         <Layout>
             <Helmet>
@@ -29,6 +31,20 @@ export default ({data}) => {
             </Helmet>
             <h1>{post.frontmatter.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: post.html}} />
+            <p>
+              {prev && (
+                <Link to={prev.fields.slug}>
+                  Previous: {prev.frontmatter.title}
+                </Link>
+              )}
+            </p>
+            <p>
+              {next && (
+                <Link to={next.fields.slug}>
+                  Next: {next.frontmatter.title}
+                </Link>
+              )}
+            </p>
         </Layout>
     )
 }
