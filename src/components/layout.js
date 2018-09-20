@@ -24,16 +24,16 @@ const Layout = ({ children }) => (
           meta={[
             { name: 'description', content: 'my exclusive blog created with ❤️' },
             { name: 'keywords', content: 'fahmiirsyd, programming' },
-            { name: 'image', content: 'https://thirsty-goldberg-be4801.netlify.com/images/fahmiirsyd-logo.png'},
+            { name: 'image', content: 'images/fahmiirsyd-logo.png'},
             { property: 'og:title', content: 'fahmiirsyd'},
             { property: 'og:description', content: 'my exclusive blog created with ❤️'},
-            { property: 'og:image', content: 'https://thirsty-goldberg-be4801.netlify.com/images/fahmiirsyd-logo.png'},
+            { property: 'og:image', content: 'images/fahmiirsyd-logo.png'},
             { property: 'og:type', content: 'article'},
             { property: 'fb:app_id', content: '1987400798047726'}
           ]}
         >
           <html lang="en" />
-          <base target="_blank" href="https://thirsty-goldberg-be4801.netlify.com" />
+          <base target="_blank" href="/" />
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
