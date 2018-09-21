@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link,graphql } from 'gatsby'
 
+import {Heroku} from '../data/cssAPI'
 import Layout from '../components/layout'
 
 export const query = graphql`
@@ -28,15 +29,15 @@ export const query = graphql`
 const IndexPage = ({data}) => {
   const ql = data.allMarkdownRemark
   return (
-    <Layout>
-      <div style={{
-        padding: 10,
-        borderRadius: 3,
-        borderColor: 'blue',
-        border: 1
-      }}>
-        <span>{ql.totalCount}</span>
-      {ql.edges.map(({node: n}) => (
+    <Layout style={{paddingTop: 0}}>
+      <Heroku>
+        <img src="/images/logome.png"></img>
+        <div>
+          <p>I'm fahmi, a frontend web developer based in Banyuwangi and currently stay in Yogyakarta.</p>
+        </div>
+      </Heroku>
+      <span>Recent articles {ql.totalCount}</span>
+        {ql.edges.map(({node: n}) => (
         <div key={n.id}>
           <Link to={n.fields.slug}>
             <h2>{`${n.frontmatter.title}`}</h2>
@@ -45,7 +46,6 @@ const IndexPage = ({data}) => {
           <p>{n.excerpt}</p>
         </div>
       ))}
-      </div>
     </Layout>
   )
 }

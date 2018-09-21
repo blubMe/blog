@@ -28,22 +28,24 @@ export default ({data, pageContext}) => {
               <meta property="og:title" content={post.frontmatter.title} />
               <meta property="og:description" content={post.frontmatter.excerpt} />
             </Helmet>
-            <h1>{post.frontmatter.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: post.html}} />
-            <p>
-              {prev && (
-                <Link to={prev.fields.slug}>
-                  Previous: {prev.frontmatter.title}
-                </Link>
-              )}
-            </p>
-            <p>
-              {next && (
-                <Link to={next.fields.slug}>
-                  Next: {next.frontmatter.title}
-                </Link>
-              )}
-            </p>
+            <div style={{paddingTop: 32}}>
+              <h1>{post.frontmatter.title}</h1>
+              <div dangerouslySetInnerHTML={{ __html: post.html}} />
+              <p>
+                {prev && (
+                  <Link to={prev.fields.slug}>
+                    Previous: {prev.frontmatter.title}
+                  </Link>
+                )}
+              </p>
+              <p>
+                {next && (
+                  <Link to={next.fields.slug}>
+                    Next: {next.frontmatter.title}
+                  </Link>
+                )}
+              </p>
+            </div>
         </Layout>
     )
 }
