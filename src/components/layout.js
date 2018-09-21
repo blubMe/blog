@@ -3,10 +3,8 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Header from './header'
 import { Root,Container } from '../data/cssAPI'
 import './global.css'
-// import './layout.css'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -37,7 +35,6 @@ const Layout = ({ children }) => (
           <html lang="en" />
           <base target="_blank" href="/" />
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
         <Container>
           {children}
         </Container>

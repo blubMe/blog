@@ -3,10 +3,16 @@ import { graphql,Link } from 'gatsby'
 import Helmet from "react-helmet"
 
 import config from '../../data/site'
+import { HeaderPost } from '../components/header'
 import Layout from '../components/layout'
 
 export const query = graphql`
   query($slug: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
@@ -22,6 +28,7 @@ export default ({data, pageContext}) => {
     const {prev,next} = pageContext
     return (
         <Layout>
+            <HeaderPost siteTitle={data.site.siteMetadata.title}/>
             <Helmet>
               <title>{`${config.siteTitle} | ${post.frontmatter.title}`}</title>
               <meta name="description" content={post.frontmatter.excerpt} />

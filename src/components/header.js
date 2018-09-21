@@ -66,4 +66,33 @@ const Header = ({ siteTitle }) => (
   </NavbarWrapper>
 )
 
+export const HeaderPost = ({ siteTitle }) => (
+  <NavbarWrapper>
+      <Navbar>
+      <p><Link to="/">
+        {`<- Back to home`}
+      </Link></p>
+      <Link to="/">
+        <h3>{siteTitle}</h3>
+      </Link>
+        <NavbarLists >
+          {items.map(t => (
+            <li key={t.title}>
+              <Link to={t.url}>{t.title}</Link>
+            </li>
+          ))}
+        </NavbarLists>
+      </Navbar>
+      <Navbar extends>
+        <NavbarLists>
+          {itemsCategory.map(t => (
+              <li key={t.title}>
+                <Link to={t.url}>{t.title}</Link>
+              </li>
+            ))}
+        </NavbarLists>
+      </Navbar>
+  </NavbarWrapper>
+)
+
 export default Header

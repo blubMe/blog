@@ -3,9 +3,15 @@ import { Link,graphql } from 'gatsby'
 
 import {Heroku,TitleSub3,Post} from '../data/cssAPI'
 import Layout from '../components/layout'
+import Header from '../components/header'
 
 export const query = graphql`
   query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC })
       {
         totalCount
@@ -28,8 +34,10 @@ export const query = graphql`
 
 const IndexPage = ({data}) => {
   const ql = data.allMarkdownRemark
+  const site = data.site.siteMetadata.title
   return (
     <Layout style={{paddingTop: 0}}>
+    <Header siteTitle={data.site.siteMetadata.title} />
       <Heroku>
         <img src="/images/logome.png" alt="fahmiirsyd-banner"/>
         <div>
