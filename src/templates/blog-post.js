@@ -5,6 +5,7 @@ import Helmet from "react-helmet"
 import config from '../../data/site'
 import { HeaderPost } from '../components/header'
 import Layout from '../components/layout'
+import {Article} from '../data/cssAPI'
 
 export const query = graphql`
   query($slug: String!) {
@@ -19,6 +20,7 @@ export const query = graphql`
         title
         tags
         excerpt
+        date(formatString: "DD MMMM, YYYY")
       }
     }
   }`
@@ -35,9 +37,10 @@ export default ({data, pageContext}) => {
               <meta property="og:title" content={post.frontmatter.title} />
               <meta property="og:description" content={post.frontmatter.excerpt} />
             </Helmet>
-            <div style={{paddingTop: 32}}>
+            <Article style={{paddingTop: 32}}>
               <h1>{post.frontmatter.title}</h1>
-              <div dangerouslySetInnerHTML={{ __html: post.html}} />
+              <span>{post.frontmatter.date}</span>
+              <article dangerouslySetInnerHTML={{ __html: post.html}} />
               <p>
                 {prev && (
                   <Link to={prev.fields.slug}>
@@ -52,7 +55,7 @@ export default ({data, pageContext}) => {
                   </Link>
                 )}
               </p>
-            </div>
+            </Article>
         </Layout>
     )
 }

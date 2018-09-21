@@ -49,6 +49,9 @@ export const NavbarLists = styled.ul`
     color: rgba(0, 3, 51, .76);
     font-size: 14px;
     font-weight: 500;
+    :hover {
+      color: #5100F4;
+    }
   }
 `
 
@@ -87,8 +90,12 @@ export const TitleSub3 = styled.h3`
   color: rgba(0, 3, 51, .76);
 `
 
+export const PostMain = styled.main`
+  width: 90%;
+`
+
 export const Post = styled.article`
-  width: 60%;
+  width: inherit;
   margin: 24px 0 48px;
   p,span,h2{
     margin:0;
@@ -113,4 +120,37 @@ export const Post = styled.article`
     margin-bottom: 12px;
     color: #000;
   }
+`
+export const Aside = styled.aside`
+  width: 40%;
+  padding: 24px 0;
+  position: sticky;
+`
+
+export const AsideItem = styled.div`
+  width: 100%;
+  overflow: hidden;
+  border-radius: 3px;
+  margin-bottom: 24px;
+`
+export const AsideItemHeader = styled.div`
+  height: 60px;
+  position: relative;
+  background: #D6F4E8;
+  padding: 32px 24px;
+  h3 {
+    position: absolute;
+    bottom: 32px;
+  }
+`
+export const AsideItemContent = styled.div`
+  height: 100px;
+  padding: 0 8px;
+  background: #FAFAFA;
+`
+
+export const Article = styled.div`
+ h1 {
+   margin-bottom: 24px;
+ }
 `
