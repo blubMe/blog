@@ -70,7 +70,7 @@ export const Heroku = styled.div`
     position: absolute;
     p {
       color: rgba(0, 3, 51, .76);
-      font-size: 18px;
+      font-size: 15px;
       line-height: 1.8em;
     }
   }
@@ -80,4 +80,37 @@ export const Container = styled.div`
   margin: 0 auto;
   max-width: inherit;
   padding: 0px 0 1.45rem;
+`
+
+export const TitleSub3 = styled.h3`
+  font-weight: 500;
+  color: rgba(0, 3, 51, .76);
+`
+
+export const Post = styled.article`
+  width: 60%;
+  margin: 24px 0 48px;
+  p,span,h2{
+    margin:0;
+    padding: 0;
+  }
+  p {
+    line-height: 1.5em;
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: rgba(0, 3, 51, .76);
+  }
+  a {
+    text-decoration: none;
+  }
+  span {
+    color: rgba(0, 3, 51, .76);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  h2 {
+    line-height: 1.4em;
+    margin-bottom: 12px;
+    color: #000;
+  }
 `

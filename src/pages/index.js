@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link,graphql } from 'gatsby'
 
-import {Heroku} from '../data/cssAPI'
+import {Heroku,TitleSub3,Post} from '../data/cssAPI'
 import Layout from '../components/layout'
 
 export const query = graphql`
@@ -15,8 +15,8 @@ export const query = graphql`
             frontmatter {
               title
               date(formatString: "DD MMMM, YYYY")
+              excerpt
             }
-            excerpt
             fields {
               slug
             }
@@ -31,20 +31,22 @@ const IndexPage = ({data}) => {
   return (
     <Layout style={{paddingTop: 0}}>
       <Heroku>
-        <img src="/images/logome.png"></img>
+        <img src="/images/logome.png" alt="fahmiirsyd-banner"/>
         <div>
-          <p>I'm fahmi, a frontend web developer based in Banyuwangi and currently stay in Yogyakarta.</p>
+        <span role="img" aria-label="hands">👋</span><p>I'm fahmi, a frontend web developer based in Banyuwangi and currently stay in Yogyakarta.</p>
         </div>
       </Heroku>
-      <span>Recent articles {ql.totalCount}</span>
+      <TitleSub3>
+        Recent articles
+      </TitleSub3>
         {ql.edges.map(({node: n}) => (
-        <div key={n.id}>
+        <Post key={n.id}>
           <Link to={n.fields.slug}>
             <h2>{`${n.frontmatter.title}`}</h2>
           </Link>
+          <p>{n.frontmatter.excerpt}</p>
           <span>{n.frontmatter.date}</span>
-          <p>{n.excerpt}</p>
-        </div>
+        </Post>
       ))}
     </Layout>
   )

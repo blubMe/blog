@@ -1,9 +1,9 @@
 ---
-path: "/love"
+path: "/artificial-intelligence-blockchain-passive-income-forever"
 date: "2018-09-19"
-title: "Love"
+title: "Artificial Intelligence + Blockchain = Passive Income (Forever?)"
 tags: ['js','programming','react']
-excerpt: "Graphql is great"
+excerpt: "The benefits of artificial intelligence are no longer limited to high-profile corporations, movie supervillains, and programmers performing…"
 ---
 
 # Love is love

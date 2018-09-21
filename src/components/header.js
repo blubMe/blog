@@ -9,6 +9,10 @@ const items = [
     url: '/store'
   },
   {
+    title: 'Uses',
+    url: '/uses'
+  },
+  {
     title: 'About',
     url: '/about'
   }
@@ -37,7 +41,7 @@ const Header = ({ siteTitle }) => (
   <NavbarWrapper>
       <Navbar>
       <p><Link to="/changelogs">
-        Changelogs
+        Subscribes now
       </Link></p>
       <Link to="/">
         <h3>{siteTitle}</h3>
