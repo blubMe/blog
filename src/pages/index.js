@@ -41,7 +41,7 @@ const IndexPage = ({data}) => {
       <Heroku>
         <img src="/images/logome.png" alt="fahmiirsyd-banner"/>
         <div>
-        <span role="img" aria-label="hands">👋</span><p>I'm fahmi, a frontend web developer based in Banyuwangi and currently stay in Yogyakarta.</p>
+        <span role="img" aria-label="wave">👋</span><p>I'm fahmi, a frontend web developer based in Banyuwangi and currently stay in Yogyakarta.</p>
         </div>
       </Heroku>
       <TitleSub3>

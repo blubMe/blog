@@ -6,26 +6,11 @@ import { HeaderPost } from '../components/header'
 import Layout from '../components/layout'
 import {Article} from '../data/cssAPI'
 
-export const query = graphql`
-  query($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      excerpt
-      frontmatter {
-        title
-        tags
-        date(formatString: "DD MMMM, YYYY")
-      }
-    }
-  }`
-
 export default ({data, pageContext}) => {
     const post = data.markdownRemark
+    const dateToday = new Date()
+    const dateLate = new Date(post.frontmatter.date)
+    const isOldPost = (dateToday - dateLate) / (1000 * 3600 * 24 * 365) > 1;
     const {prev,next} = pageContext
     return (
         <Layout>
@@ -39,6 +24,12 @@ export default ({data, pageContext}) => {
             <Article style={{paddingTop: 64}}>
               <h1>{post.frontmatter.title}</h1>
               <span>{post.frontmatter.date}</span>
+              {isOldPost ? (
+                <div>
+                  This post is over a year old. Some of the content may be out of
+                  date.
+                </div>
+              ) : null}
               <article dangerouslySetInnerHTML={{ __html: post.html}} />
               <p>
                 {prev && (
@@ -58,3 +49,21 @@ export default ({data, pageContext}) => {
         </Layout>
     )
 }
+
+export const query = graphql`
+  query($slug: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
+      excerpt
+      frontmatter {
+        title
+        tags
+        date(formatString: "DD MMMM, YYYY")
+      }
+    }
+  }`
