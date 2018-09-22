@@ -30,6 +30,7 @@ export const Navbar = styled.nav`
   }
   h3 {
     color: #000!important;
+    margin-right: -64px;
   }
   ${props => props.extends && css`
     justify-content: center;
@@ -59,9 +60,8 @@ export const Heroku = styled.div`
   height: 180px;
   background-color: white;
   padding: 24px 0 12px;
-  margin-bottom: 24px;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid #eee;
   position: relative;
   img{
     display: flex;
@@ -112,7 +112,7 @@ export const Post = styled.article`
   }
   span {
     color: rgba(0, 3, 51, .76);
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
   }
   h2 {

@@ -1,5 +1,4 @@
 ---
-path: "/react"
 date: "2018-09-18"
 title: "React is Love"
 tags: ['js','programming','react']

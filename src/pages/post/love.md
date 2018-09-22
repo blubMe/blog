@@ -1,5 +1,4 @@
 ---
-path: "/artificial-intelligence-blockchain-passive-income-forever"
 date: "2018-09-19"
 title: "Object literal dan constructor (JS)"
 tags: ['js','programming','react']

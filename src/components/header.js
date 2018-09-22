@@ -9,13 +9,17 @@ const items = [
     url: '/store'
   },
   {
+    title: 'Now',
+    url: '/now'
+  },
+  {
     title: 'Uses',
     url: '/uses'
   },
   {
     title: 'About',
     url: '/about'
-  }
+  },
 ]
 
 const itemsCategory = [
@@ -66,14 +70,14 @@ const Header = ({ siteTitle }) => (
   </NavbarWrapper>
 )
 
-export const HeaderPost = ({ siteTitle }) => (
+export const HeaderPost = () => (
   <NavbarWrapper>
       <Navbar>
       <p><Link to="/">
-        {`<- Back to home`}
+        {`← Back to home`}
       </Link></p>
       <Link to="/">
-        <h3>{siteTitle}</h3>
+        <h3>fahmiirsyd</h3>
       </Link>
         <NavbarLists >
           {items.map(t => (

@@ -54,7 +54,9 @@ const IndexPage = ({data}) => {
             <Link to={n.fields.slug}>
               <h2>{`${n.frontmatter.title}`}</h2>
             </Link>
-            <p>{n.frontmatter.excerpt}</p>
+            <Link to={n.fields.slug}>
+              <p>{n.frontmatter.excerpt}</p>
+            </Link>
             <span>{n.frontmatter.date}</span>
           </Post>
         ))}

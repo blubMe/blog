@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql,Link } from 'gatsby'
 import Helmet from "react-helmet"
 
-import config from '../../data/site'
 import { HeaderPost } from '../components/header'
 import Layout from '../components/layout'
 import {Article} from '../data/cssAPI'
@@ -32,12 +31,12 @@ export default ({data, pageContext}) => {
         <Layout>
             <HeaderPost siteTitle={data.site.siteMetadata.title}/>
             <Helmet>
-              <title>{`${config.siteTitle} | ${post.frontmatter.title}`}</title>
+              <title>{`${post.frontmatter.title}`}</title>
               <meta name="description" content={post.frontmatter.excerpt} />
               <meta property="og:title" content={post.frontmatter.title} />
               <meta property="og:description" content={post.frontmatter.excerpt} />
             </Helmet>
-            <Article style={{paddingTop: 32}}>
+            <Article style={{paddingTop: 64}}>
               <h1>{post.frontmatter.title}</h1>
               <span>{post.frontmatter.date}</span>
               <article dangerouslySetInnerHTML={{ __html: post.html}} />
