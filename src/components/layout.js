@@ -29,7 +29,11 @@ const Layout = ({ children }) => (
             { property: 'og:description', content: 'my exclusive blog created with ❤️'},
             { property: 'og:image', content: '/images/fahmiirsyd-logo.png'},
             { property: 'og:type', content: 'article'},
-            { property: 'fb:app_id', content: '1987400798047726'}
+            { property: 'fb:app_id', content: '1987400798047726'},
+            { name: 'twitter:card', content: 'summary_large_image' },
+            { name: 'twitter:site', content: '@alexjpate' },
+            { name: 'twitter:creator', content: '@alexjpate' },
+            { name: 'twitter:image', content: '/images/fahmiirsyd-logo.png' }
           ]}
         >
           <html lang="en" />
