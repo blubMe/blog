@@ -33,6 +33,11 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    'gatsby-transformer-remark'
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        excerpt_separator: `<!-- end -->`
+      }
+    }
   ],
 }

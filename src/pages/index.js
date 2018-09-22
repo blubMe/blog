@@ -18,10 +18,10 @@ export const query = graphql`
         edges {
           node {
             id
+            excerpt(pruneLength: 155)
             frontmatter {
               title
               date(formatString: "DD MMMM, YYYY")
-              excerpt
             }
             fields {
               slug
@@ -55,7 +55,7 @@ const IndexPage = ({data}) => {
               <h2>{`${n.frontmatter.title}`}</h2>
             </Link>
             <Link to={n.fields.slug}>
-              <p>{n.frontmatter.excerpt}</p>
+              <p>{n.excerpt}</p>
             </Link>
             <span>{n.frontmatter.date}</span>
           </Post>

@@ -15,10 +15,10 @@ export const query = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      excerpt
       frontmatter {
         title
         tags
-        excerpt
         date(formatString: "DD MMMM, YYYY")
       }
     }
@@ -32,9 +32,9 @@ export default ({data, pageContext}) => {
             <HeaderPost siteTitle={data.site.siteMetadata.title}/>
             <Helmet>
               <title>{`${post.frontmatter.title}`}</title>
-              <meta name="description" content={post.frontmatter.excerpt} />
+              <meta name="description" content={post.excerpt} />
               <meta property="og:title" content={post.frontmatter.title} />
-              <meta property="og:description" content={post.frontmatter.excerpt} />
+              <meta property="og:description" content={post.excerpt} />
             </Helmet>
             <Article style={{paddingTop: 64}}>
               <h1>{post.frontmatter.title}</h1>
