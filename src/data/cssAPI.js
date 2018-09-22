@@ -149,8 +149,25 @@ export const AsideItemContent = styled.div`
   background: #FAFAFA;
 `
 
-export const Article = styled.div`
- h1 {
-   margin-bottom: 24px;
- }
+export const Article = styled.main`
+  padding-top: 48px;
+  max-width: 740px;
+  margin: 0 auto;
+  h1 {
+      margin-top: 8px;
+      font-size: 42px;
+      margin-bottom: 32px;
+  }
+  p {
+      font-size: 1em;
+      color: rgba(0,0,0,.80);
+      line-height: 1.9em;
+  }
+  span {
+    color: rgba(0,0,0,.54);
+    font-weight: 500;
+  }
+`
+export const ArticleContent = styled.article`
+  padding-top: 32px;
 `

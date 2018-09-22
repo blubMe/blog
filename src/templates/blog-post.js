@@ -4,7 +4,7 @@ import Helmet from "react-helmet"
 
 import { HeaderPost } from '../components/header'
 import Layout from '../components/layout'
-import {Article} from '../data/cssAPI'
+import {Article,ArticleContent} from '../data/cssAPI'
 
 export default ({data, pageContext}) => {
     const post = data.markdownRemark
@@ -21,16 +21,16 @@ export default ({data, pageContext}) => {
               <meta property="og:title" content={post.frontmatter.title} />
               <meta property="og:description" content={post.excerpt} />
             </Helmet>
-            <Article style={{paddingTop: 64}}>
+            <Article>
               <h1>{post.frontmatter.title}</h1>
-              <span>{post.frontmatter.date}</span>
+              <span>{`By fahmi on ${post.frontmatter.date}`}</span>
               {isOldPost ? (
                 <div>
                   This post is over a year old. Some of the content may be out of
                   date.
                 </div>
               ) : null}
-              <article dangerouslySetInnerHTML={{ __html: post.html}} />
+              <ArticleContent dangerouslySetInnerHTML={{ __html: post.html}} />
               <p>
                 {prev && (
                   <Link to={prev.fields.slug}>
