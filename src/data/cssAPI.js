@@ -55,6 +55,9 @@ export const Root = styled.div`
 export const NavbarWrapper = styled.header`
   background-color: white;
   width: 100%;
+  @media (max-width: 600px) {
+    padding: 12px 0;
+  }
   padding: 12px 0 24px;
   position: sticky;
   top: 0;
@@ -73,6 +76,11 @@ export const Navbar = styled.nav`
     font-size: 14px;
     font-weight: 500;
   }
+  @media (max-width: 600px) {
+    p {
+        display: none;
+    }
+  }
   h3 {
     color: #000!important;
     margin-right: -64px;
@@ -80,6 +88,9 @@ export const Navbar = styled.nav`
   ${props => props.extends && css`
     justify-content: center;
     padding-top: 12px;
+    @media (max-width: 600px) {
+      display: none;
+    }
   `}
 `
 export const NavbarLists = styled.ul`
@@ -172,6 +183,9 @@ export const Aside = styled.aside`
   width: 40%;
   padding: 24px 0;
   position: sticky;
+  @media (max-width: 700px) {
+    display: none;
+  }
 `
 
 export const AsideItem = styled.div`

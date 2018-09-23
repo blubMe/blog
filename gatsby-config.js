@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'fahmiirsyd',
-    siteUrl: `https://thirsty-goldberg-be4801.netlify.com/`
+    siteUrl: `https://fahmirsyd.netlify.com/`
   },
   plugins: [
     'gatsby-plugin-react-helmet',
