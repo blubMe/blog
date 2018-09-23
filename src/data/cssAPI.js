@@ -171,3 +171,24 @@ export const Article = styled.main`
 export const ArticleContent = styled.article`
   padding-top: 32px;
 `
+
+export const Footer = styled.footer`
+  display: flex;
+  align-items: center;
+  color: rgba(0, 3, 51, .76);
+  padding: 12px 0;
+  border-top: 1px solid #5100F4;
+  font-size: 13px;
+  font-weight: 500;
+  p {
+    margin-right: 8px;
+  }
+  a {
+    margin-right: 8px;
+    color: rgba(0, 3, 51, .76);
+    text-decoration: none;
+    :hover {
+      color: #5100F4;
+    }
+  }
+`
