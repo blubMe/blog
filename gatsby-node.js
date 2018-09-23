@@ -7,8 +7,8 @@
 // You can delete this file if you're not using it
 
 const path = require(`path`)
-require('dotenv').config()
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
     const {createNodeField} = actions
@@ -43,15 +43,15 @@ exports.createPages = ({graphql,actions}) => {
         `).then(result => {
             const post = result.data.allMarkdownRemark.edges
             post.forEach(({ node },index) => {
+                const next = index === 0 ? null : post[index - 1].node
+                const prev = index === post.length - 1 ? null : post[index + 1].node
                 createPage({
                     path: node.fields.slug,
-                    component: path.resolve(`./src/templates/blog-post.js`),
+                    component: blogPostTemplate,
                     context: {
-                        // Data passed to context is available
-                        // in page queries as GraphQL variables.
                         slug: node.fields.slug,
-                        prev: index === 0 ? null : post[index - 1].node,
-                        next: index === (post.length - 1) ? null : post[index + 1].node
+                        prev,
+                        next
                     },
                 })
             })
