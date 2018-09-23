@@ -32,38 +32,7 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
-    'gatsby-plugin-offline',
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        excerpt_separator: `<!-- end -->`
-      }
-    },
-    {
-      resolve: `gatsby-plugin-facebook-analytics`,
-      options: {
-        appId: "1987400798047726",
-        includeInDevelopment: false,
-        debug: false,
-        // Can select your language, default will load english
-        language: "en_US",
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-82449461-2",
-        // Puts tracking script in the head instead of the body
-        head: false,
-        // Setting this parameter is optional
-        anonymize: true,
-        // Setting this parameter is also optional
-        respectDNT: true,
-        // Avoids sending pageview hits from custom paths
-        exclude: ["/404"],
-        // Enables Google Optimize using your container Id
-        optimizeId: "GTM-WF4S8W6",
-      },
-    }
+    `gatsby-plugin-offline`,
+    `gatsby-transformer-remark`
   ],
 }

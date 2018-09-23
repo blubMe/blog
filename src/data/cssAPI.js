@@ -1,8 +1,53 @@
-import styled, {css} from 'styled-components'
+import styled, {css,injectGlobal} from 'styled-components'
+
+import GraphikRegular from '../fonts/Graphik-400-Regular.otf'
+import GraphikMedium from '../fonts/Graphik-500-Medium.otf'
+
+injectGlobal`
+  @font-face {
+      font-family: 'Graphik Web';
+      src: url(${GraphikRegular}) format('woff');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Graphik Web';
+      src: url(${GraphikMedium}) format('woff');
+      font-weight: 500;
+    }
+    * {
+      -moz-osx-font-smoothing: grayscale;
+      box-sizing: border-box;
+    }
+    html {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+    body {
+      font-family: 'Graphik Web', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    a {
+      text-decoration: none;
+    }
+    p {
+      margin: 0;
+      padding: 0;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-rendering: optimizeLegibility;
+    }
+`
 
 export const Root = styled.div`
   width: 100%;
-  max-width: 940px;
+  max-width: 970px;
   margin: 0 auto;
   padding: 0 16px;
 `
@@ -57,7 +102,7 @@ export const NavbarLists = styled.ul`
 `
 
 export const Heroku = styled.div`
-  height: 180px;
+  height: 220px;
   background-color: white;
   padding: 24px 0 12px;
   margin-bottom: 32px;
@@ -75,6 +120,8 @@ export const Heroku = styled.div`
       color: rgba(0, 3, 51, .76);
       font-size: 15px;
       line-height: 1.8em;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
     }
   }
 `
@@ -134,7 +181,7 @@ export const AsideItem = styled.div`
   margin-bottom: 24px;
 `
 export const AsideItemHeader = styled.div`
-  height: 60px;
+  height: 100px;
   position: relative;
   background: #D6F4E8;
   padding: 32px 24px;
