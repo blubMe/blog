@@ -37,7 +37,7 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
           <base target="_blank" href="/" />
-          <meta name="google-site-verification" content="7HICaoorQ4Nd0P5weegiDs1eb-qnes48NYNe0DvOnFY" />
+          <meta name="google-site-verification" content="EKB6SPfHL3fqp5rX6Kye6soq4SuWS1YtYsFnY2TRif" />
         </Helmet>
         <Container>
           {children}
