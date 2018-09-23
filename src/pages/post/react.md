@@ -1,9 +1,7 @@
 ---
-path: "/react"
 date: "2018-09-18"
 title: "React is Love"
 tags: ['js','programming','react']
-excerpt: "Great react is great javascript fundamental on it ?"
 ---
 
 # ARROOOO

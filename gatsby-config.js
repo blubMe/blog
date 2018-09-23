@@ -7,6 +7,13 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-sitemap`,
     {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: false,
+        pure: true
+      }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'gatsby-starter-default',
@@ -26,6 +33,11 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    'gatsby-transformer-remark'
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        excerpt_separator: `<!-- end -->`
+      }
+    }
   ],
 }
