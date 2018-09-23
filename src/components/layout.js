@@ -29,7 +29,6 @@ const Layout = ({ children }) => (
             { property: 'og:description', content: 'my exclusive blog created with ❤️'},
             { property: 'og:image', content: '/images/fahmiirsyd-logo.png'},
             { property: 'og:type', content: 'article'},
-            { property: 'fb:app_id', content: '1987400798047726'},
             { name: 'twitter:card', content: 'summary_large_image' },
             { name: 'twitter:site', content: '@alexjpate' },
             { name: 'twitter:creator', content: '@alexjpate' },
@@ -38,6 +37,7 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
           <base target="_blank" href="/" />
+          <meta name="google-site-verification" content="7HICaoorQ4Nd0P5weegiDs1eb-qnes48NYNe0DvOnFY" />
         </Helmet>
         <Container>
           {children}
