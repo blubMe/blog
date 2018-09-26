@@ -4,7 +4,7 @@ import Helmet from "react-helmet"
 
 import { HeaderPost } from '../components/header'
 import Layout from '../components/layout'
-import {Article,ArticleContent} from '../data/cssAPI'
+import {Article,ArticleContent,ArticleFooter} from '../data/cssAPI'
 
 export default ({data, pageContext}) => {
     const post = data.markdownRemark
@@ -31,20 +31,22 @@ export default ({data, pageContext}) => {
                 </div>
               ) : null}
               <ArticleContent dangerouslySetInnerHTML={{ __html: post.html}} />
-              <p>
-                {prev && (
-                  <Link to={prev.fields.slug}>
-                    Previous: {prev.frontmatter.title}
-                  </Link>
-                )}
-              </p>
-              <p>
-                {next && (
-                  <Link to={next.fields.slug}>
-                    Next: {next.frontmatter.title}
-                  </Link>
-                )}
-              </p>
+              <ArticleFooter>
+                <p>
+                  {prev && (
+                    <Link to={prev.fields.slug}>
+                    ← Previous: {prev.frontmatter.title}
+                    </Link>
+                  )}
+                </p>
+                <p>
+                  {next && (
+                    <Link to={next.fields.slug}>
+                      Next : {next.frontmatter.title} →
+                    </Link>
+                  )}
+                </p>
+              </ArticleFooter>
             </Article>
         </Layout>
     )

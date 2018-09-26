@@ -43,6 +43,22 @@ injectGlobal`
     h6 {
       text-rendering: optimizeLegibility;
     }
+    pre {
+      background: #eee;
+      font-size: .9em;
+      line-height: 1.6;
+      margin-bottom: 1.6em;
+      max-width: 100%;
+      border-radius: 3px;
+      padding: 1.6em;
+      overflow: auto;
+      code {
+        color: #333;
+      }
+    }
+    video {
+      background: #eee;
+    }
 `
 
 export const Root = styled.div`
@@ -124,6 +140,11 @@ export const Heroku = styled.div`
     margin: 0 auto;
     height: 100px;
   }
+  @media (max-width: 600px) {
+    div {
+      bottom: 8px;
+    }
+  }
   div {
     bottom: 0;
     position: absolute;
@@ -146,10 +167,17 @@ export const Container = styled.div`
 export const TitleSub3 = styled.h3`
   font-weight: 500;
   color: rgba(0, 3, 51, .76);
+  @media (max-width: 600px) {
+    font-size: 16px;
+    margin: 0;
+  }
 `
 
 export const PostMain = styled.main`
   width: 90%;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `
 
 export const Post = styled.article`
@@ -212,26 +240,51 @@ export const AsideItemContent = styled.div`
 
 export const Article = styled.main`
   padding-top: 48px;
-  max-width: 740px;
+  max-width: 640px;
   margin: 0 auto;
   h1 {
       margin-top: 8px;
-      font-size: 42px;
-      margin-bottom: 32px;
+      font-size: 40px;
+      line-height: 1.333em;
   }
   p {
       font-size: 1em;
-      color: rgba(0,0,0,.80);
+      color: #333;
       line-height: 1.9em;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
   }
   span {
     color: rgba(0,0,0,.54);
     font-weight: 500;
+    font-size: 15px;
   }
 `
 export const ArticleContent = styled.article`
   padding-top: 32px;
+  a {
+    color: #5100F4;
+    text-decoration: underline;
+  }
 `
+
+export const ArticleFooter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  color: #5100F4;
+  p {
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    a {
+      color: #5100F4;
+    }
+    text-overflow: ellipsis;
+  }
+`
+
 
 export const Footer = styled.footer`
   display: flex;
