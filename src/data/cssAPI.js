@@ -254,6 +254,11 @@ export const Article = styled.main`
       margin-block-start: 1em;
       margin-block-end: 1em;
   }
+  @media (max-width: 700px) {
+    p {
+      margin: 12px 0;
+    }
+  }
   span {
     color: rgba(0,0,0,.54);
     font-weight: 500;
