@@ -8,6 +8,8 @@ import {Article,ArticleContent,ArticleFooter} from '../data/cssAPI'
 
 export default ({data, pageContext}) => {
     const post = data.markdownRemark
+    const { length: l } = post
+    console.log(l)
     const dateToday = new Date()
     const dateLate = new Date(post.frontmatter.date)
     const isOldPost = (dateToday - dateLate) / (1000 * 3600 * 24 * 365) > 1;
