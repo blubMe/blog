@@ -62,12 +62,24 @@ const IndexPage = ({data}) => {
         ))}
       </PostMain>
       <Aside>
+        {/* <AsideItem>
+          <AsideItemHeader>
+            <h3>React 16 Course</h3>
+          </AsideItemHeader>
+          <AsideItemContent />
+        </AsideItem>
         <AsideItem>
           <AsideItemHeader>
             <h3>Learn from scratch</h3>
           </AsideItemHeader>
           <AsideItemContent />
         </AsideItem>
+        <AsideItem>
+          <AsideItemHeader>
+            <h3>Learn from scratch</h3>
+          </AsideItemHeader>
+          <AsideItemContent />
+        </AsideItem> */}
       </Aside>
       </div>
     </Layout>
