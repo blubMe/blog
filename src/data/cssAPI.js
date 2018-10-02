@@ -245,7 +245,7 @@ export const Article = styled.main`
   }
   p {
       font-size: 1em;
-      color: #333;
+      color: rgba(0,3,51,.76);
       line-height: 1.9em;
       margin-block-start: 1em;
       margin-block-end: 1em;

@@ -4,14 +4,13 @@ import Helmet from "react-helmet"
 
 import { HeaderPost } from '../components/header'
 import Layout from '../components/layout'
-import {Article,ArticleContent,ArticleFooter} from '../data/cssAPI'
+import {Article,ArticleContent} from '../data/cssAPI'
 
 export default ({data, pageContext}) => {
     const post = data.markdownRemark
     const dateToday = new Date()
     const dateLate = new Date(post.frontmatter.date)
     const isOldPost = (dateToday - dateLate) / (1000 * 3600 * 24 * 365) > 1;
-    const {prev,next} = pageContext
     return (
         <Layout>
             <HeaderPost siteTitle={data.site.siteMetadata.title}/>
@@ -23,7 +22,7 @@ export default ({data, pageContext}) => {
             </Helmet>
             <Article>
               <h1>{post.frontmatter.title}</h1>
-              <span>{`By fahmi on ${post.frontmatter.date}`}</span>
+              <span>{`By fahmi on ${post.frontmatter.date} - ${post.timeToRead} min read`}</span>
               {isOldPost ? (
                 <div>
                   This post is over a year old. Some of the content may be out of
@@ -31,22 +30,6 @@ export default ({data, pageContext}) => {
                 </div>
               ) : null}
               <ArticleContent dangerouslySetInnerHTML={{ __html: post.html}} />
-              <ArticleFooter>
-                <p>
-                  {prev && (
-                    <Link to={prev.fields.slug}>
-                    ← Previous: {prev.frontmatter.title}
-                    </Link>
-                  )}
-                </p>
-                <p>
-                  {next && (
-                    <Link to={next.fields.slug}>
-                      Next : {next.frontmatter.title} →
-                    </Link>
-                  )}
-                </p>
-              </ArticleFooter>
             </Article>
         </Layout>
     )
@@ -62,6 +45,7 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       excerpt
+      timeToRead
       frontmatter {
         title
         tags

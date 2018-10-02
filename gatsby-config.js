@@ -16,11 +16,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'fahmiirsyd',
+        short_name: 'fahmiirsyd',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#fff',
+        theme_color: '#fff',
         display: 'minimal-ui',
         icon: 'src/images/fahmiirsyd-icon.png', // This path is relative to the root of the site.
       },
@@ -33,6 +33,9 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    `gatsby-transformer-remark`
+    `gatsby-transformer-remark`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-netlify-cms`
   ],
 }
