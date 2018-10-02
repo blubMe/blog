@@ -1,12 +1,12 @@
 import React from 'react'
-import { graphql,Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Helmet from "react-helmet"
 
 import { HeaderPost } from '../components/header'
 import Layout from '../components/layout'
 import {Article,ArticleContent} from '../data/cssAPI'
 
-export default ({data, pageContext}) => {
+export default ({data}) => {
     const post = data.markdownRemark
     const dateToday = new Date()
     const dateLate = new Date(post.frontmatter.date)
