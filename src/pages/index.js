@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link,graphql } from 'gatsby'
 
-import {Heroku,TitleSub3,PostMain,Post,Aside,AsideItem,AsideItemHeader,AsideItemContent} from '../data/cssAPI'
+import {Heroku,TitleSub3,PostMain,Post,Aside} from '../data/cssAPI'
 import Layout from '../components/layout'
 import Header from '../components/header'
 
@@ -12,7 +12,7 @@ export const query = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC })
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC})
       {
         totalCount
         edges {
@@ -49,25 +49,38 @@ const IndexPage = ({data}) => {
       </TitleSub3>
       <div style={{display: 'flex'}}>
       <PostMain>
-        {ql.edges.map(({node: n}) => (
-          <Post key={n.id}>
-            <Link to={n.fields.slug}>
-              <h2>{`${n.frontmatter.title}`}</h2>
-            </Link>
-            <Link to={n.fields.slug}>
-              <p>{n.excerpt}</p>
-            </Link>
-            <span>{n.frontmatter.date}</span>
-          </Post>
-        ))}
+        { ql.edges.map(({node: n}) => (
+              <Post key={n.id}>
+                <Link to={n.fields.slug}>
+                  <h2>{`${n.frontmatter.title}`}</h2>
+                </Link>
+                <Link to={n.fields.slug}>
+                  <p>{n.excerpt}</p>
+                </Link>
+                <span>{n.frontmatter.date}</span>
+              </Post>
+            ))
+        }
       </PostMain>
       <Aside>
+        {/* <AsideItem>
+          <AsideItemHeader>
+            <h3>React 16 Course</h3>
+          </AsideItemHeader>
+          <AsideItemContent />
+        </AsideItem>
         <AsideItem>
           <AsideItemHeader>
             <h3>Learn from scratch</h3>
           </AsideItemHeader>
           <AsideItemContent />
         </AsideItem>
+        <AsideItem>
+          <AsideItemHeader>
+            <h3>Learn from scratch</h3>
+          </AsideItemHeader>
+          <AsideItemContent />
+        </AsideItem> */}
       </Aside>
       </div>
     </Layout>

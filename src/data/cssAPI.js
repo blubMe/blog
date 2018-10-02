@@ -221,21 +221,17 @@ export const AsideItem = styled.div`
   overflow: hidden;
   border-radius: 3px;
   margin-bottom: 24px;
+  max-height: 100px;
+  background: #4A6FEB;
+  padding: 32px 24px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.05), 0 5px 15px rgba(0,0,0,.05);
 `
 export const AsideItemHeader = styled.div`
-  height: 100px;
-  position: relative;
-  background: #D6F4E8;
-  padding: 32px 24px;
-  h3 {
-    position: absolute;
-    bottom: 32px;
-  }
+  color: white;
+  -webkit-font-smoothing: antialiased;
 `
 export const AsideItemContent = styled.div`
-  height: 100px;
   padding: 0 8px;
-  background: #FAFAFA;
 `
 
 export const Article = styled.main`
@@ -249,7 +245,7 @@ export const Article = styled.main`
   }
   p {
       font-size: 1em;
-      color: #333;
+      color: rgba(0,3,51,.76);
       line-height: 1.9em;
       margin-block-start: 1em;
       margin-block-end: 1em;

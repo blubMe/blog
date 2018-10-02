@@ -21,22 +21,20 @@ const Layout = ({ children }) => (
       <Root>
         <Helmet
           title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'my exclusive blog created with ❤️' },
-            { name: 'keywords', content: 'fahmiirsyd, programming' },
-            { name: 'image', content: '/images/fahmiirsyd-logo.png'},
-            { property: 'og:title', content: 'fahmiirsyd'},
-            { property: 'og:description', content: 'my exclusive blog created with ❤️'},
-            { property: 'og:image', content: '/images/fahmiirsyd-logo.png'},
-            { property: 'og:type', content: 'article'},
-            { name: 'twitter:card', content: 'summary_large_image' },
-            { name: 'twitter:site', content: '@alexjpate' },
-            { name: 'twitter:creator', content: '@alexjpate' },
-            { name: 'twitter:image', content: '/images/fahmiirsyd-logo.png' }
-          ]}
         >
           <html lang="en" />
           <base target="_blank" href="/" />
+          <meta name="description" content="my exclusive blog created with ❤️" />
+          <meta name="keywords" content="fahmiirsyd" />
+          <meta name="image" content="/images/fahmiirsyd-logo.png" />
+          <meta name="twitter:card" content="summary_large-image" />
+          <meta name="twitter:site" content="@fahmiirsyadk" />
+          <meta name="twitter:creator" content="fahmiirsyadk" />
+          <meta name="twitter:image" content="/images/fahmiirsyd-logo.png" />
+          <meta property="og:title" content="fahmiirsyd" />
+          <meta property="og:description" content="my exclusive blog created with ❤️" />
+          <meta property="og:image" content="/images/fahmiirsyd-logo.png" />
+          <meta property="og:type" content="article" />
           <meta name="google-site-verification" content="EKB6SPfHL3fqp5rX6Kye6soq4SuWS1YtYsFnY2TRifA" />
         </Helmet>
         <Container>
