@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link,graphql } from 'gatsby'
 
-import {Heroku,TitleSub3,PostMain,Post,Aside} from '../data/cssAPI'
+import {Heroku,TitleSub3,PostMain,Post,PostTitle,PostThumbnail,Aside} from '../data/cssAPI'
 import Layout from '../components/layout'
 import Header from '../components/header'
 
@@ -18,10 +18,12 @@ export const query = graphql`
         edges {
           node {
             id
-            excerpt(pruneLength: 155)
+            timeToRead
+            excerpt(pruneLength: 110)
             frontmatter {
+              image
               title
-              date(formatString: "DD MMMM, YYYY")
+              date(fromNow: true)
             }
             fields {
               slug
@@ -51,13 +53,18 @@ const IndexPage = ({data}) => {
       <PostMain>
         { ql.edges.map(({node: n}) => (
               <Post key={n.id}>
-                <Link to={n.fields.slug}>
-                  <h2>{`${n.frontmatter.title}`}</h2>
-                </Link>
-                <Link to={n.fields.slug}>
-                  <p>{n.excerpt}</p>
-                </Link>
-                <span>{n.frontmatter.date}</span>
+                <PostTitle>
+                  <Link to={n.fields.slug}>
+                    <h2>{`${n.frontmatter.title}`}</h2>
+                  </Link>
+                  <Link to={n.fields.slug}>
+                    <p>{n.excerpt}</p>
+                  </Link>
+                  <span>{n.frontmatter.date} - {n.timeToRead} min read</span>
+                </PostTitle>
+                <PostThumbnail>
+                  <img src={n.frontmatter.image} alt=""/>
+                </PostThumbnail>
               </Post>
             ))
         }

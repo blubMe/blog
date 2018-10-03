@@ -181,13 +181,33 @@ export const PostMain = styled.main`
 `
 
 export const Post = styled.article`
+  display: flex;
+  min-height: 100px;
+  justify-content: space-between;
   width: inherit;
   margin: 24px 0 48px;
+  @media (max-width: 600px) {
+    h2 {
+      font-size: 16px;
+    } p {
+      width: 250px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    img {
+      width: 100px!important;
+      height: 100px!important;
+    } span {
+      width: 200px;
+    }
+  }
   p,span,h2{
     margin:0;
     padding: 0;
   }
   p {
+    color: rgba(0,0,0,.54)!important;
     line-height: 1.5em;
     margin-bottom: 12px;
     font-size: 15px;
@@ -207,6 +227,23 @@ export const Post = styled.article`
     color: #000;
   }
 `
+
+export const PostTitle = styled.div`
+  padding-right: 18px;
+  position: relative;
+  span {
+    position: absolute;
+    bottom: 0;
+  }
+`
+export const PostThumbnail = styled.div`
+  img {
+    width: 148px;
+    height: 148px;
+    object-fit: cover;
+  }
+`
+
 export const Aside = styled.aside`
   width: 40%;
   padding: 24px 0;
@@ -253,6 +290,12 @@ export const Article = styled.main`
   @media (max-width: 700px) {
     p {
       margin: 12px 0;
+    }
+    h1 {
+      font-size: 32px!important;
+    }
+    span {
+      font-size: 13px!important;
     }
   }
   span {
