@@ -46,7 +46,7 @@ const Layout = ({ children }) => (
           <meta content="yes" name="apple-touch-fullscreen" />
           <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
           <meta name="format-detection" content="telephone=no" />
-          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="google-site-verification" content="EKB6SPfHL3fqp5rX6Kye6soq4SuWS1YtYsFnY2TRifA" />
         </Helmet>
         <Container>
