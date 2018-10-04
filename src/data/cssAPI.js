@@ -186,16 +186,6 @@ export const Post = styled.article`
   justify-content: space-between;
   width: 100%;
   margin: 24px 0 48px;
-  @media only screen
-  and (min-device-width : 320px)
-  and (max-device-width : 568px)
-  and (orientation : portrait) {
-    p {
-      width: 100%;
-      font-size: 13px!important;
-      word-break: break-word;
-    }
-  }
 `
 
 export const PostTitle = styled.div`
@@ -227,8 +217,6 @@ export const PostTitle = styled.div`
     h2 {
       font-size: 16px;
     } p {
-      width: 250px;
-      white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
@@ -241,22 +229,24 @@ export const PostTitle = styled.div`
   }
   padding-right: 18px;
   position: relative;
-  @media only screen
-  and (min-device-width : 320px)
-  and (max-device-width : 568px)
-  and (orientation : portrait) {
+  @media only screen and (min-width : 320px) and (max-width : 568px) and (orientation : portrait) {
     padding-right: 8px;
-    max-width: 200px;
+    max-width: 232px;
     p , h2 {
       margin-bottom: 8px!important;
     }
     p {
       word-break: break-word;
-      width: 100%;
       font-size: 13px!important;
+      overflow: hidden!important;
+      max-height: 40px!important;
+      text-overflow: ellipsis!important;
+      display: -webkit-box!important;
+      -webkit-line-clamp: 2!important;
+      -webkit-box-orient: vertical;
     }
     h2 {
-      font-size: 14px!important;
+      font-size: 16px;
     }
   }
   @media (max-width: 600px){
@@ -269,12 +259,12 @@ export const PostTitle = styled.div`
 `
 export const PostThumbnail = styled.div`
   @media only screen
-    and (min-device-width : 320px)
-    and (max-device-width : 568px)
+    and (min-width : 320px)
+    and (max-width : 568px)
     and (orientation : portrait) {
       img {
-        width: 120px;
-        height: 120px;
+        width: 120px!important;
+        height: 115px!important;
       }
     }
   img {
