@@ -184,7 +184,7 @@ export const Post = styled.article`
   display: flex;
   min-height: 100px;
   justify-content: space-between;
-  width: inherit;
+  width: 100%;
   margin: 24px 0 48px;
   @media (max-width: 600px) {
     h2 {
@@ -231,6 +231,20 @@ export const Post = styled.article`
 export const PostTitle = styled.div`
   padding-right: 18px;
   position: relative;
+  @media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 568px)
+  and (orientation : portrait) {
+    padding-right: 8px;
+    max-width: 200px;
+    word-break: break-word;
+    p {
+      font-size: 13px!important;
+    }
+  }
+  @media (max-width: 600px){
+    padding-right: 8px;
+  }
   span {
     position: absolute;
     bottom: 0;
@@ -288,6 +302,7 @@ export const Article = styled.main`
       margin-block-end: 1em;
   }
   @media (max-width: 700px) {
+    padding-top: 32px;
     p {
       margin: 12px 0;
     }
