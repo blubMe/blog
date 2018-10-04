@@ -186,22 +186,19 @@ export const Post = styled.article`
   justify-content: space-between;
   width: 100%;
   margin: 24px 0 48px;
-  @media (max-width: 600px) {
-    h2 {
-      font-size: 16px;
-    } p {
-      width: 250px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    img {
-      width: 100px!important;
-      height: 100px!important;
-    } span {
-      width: 200px;
+  @media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 568px)
+  and (orientation : portrait) {
+    p {
+      width: 100%;
+      font-size: 13px!important;
+      word-break: break-word;
     }
   }
+`
+
+export const PostTitle = styled.div`
   p,span,h2{
     margin:0;
     padding: 0;
@@ -226,9 +223,22 @@ export const Post = styled.article`
     margin-bottom: 12px;
     color: #000;
   }
-`
-
-export const PostTitle = styled.div`
+  @media (max-width: 600px) {
+    h2 {
+      font-size: 16px;
+    } p {
+      width: 250px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    img {
+      width: 100px!important;
+      height: 100px!important;
+    } span {
+      width: 200px;
+    }
+  }
   padding-right: 18px;
   position: relative;
   @media only screen
@@ -237,9 +247,16 @@ export const PostTitle = styled.div`
   and (orientation : portrait) {
     padding-right: 8px;
     max-width: 200px;
-    word-break: break-word;
+    p , h2 {
+      margin-bottom: 8px!important;
+    }
     p {
+      word-break: break-word;
+      width: 100%;
       font-size: 13px!important;
+    }
+    h2 {
+      font-size: 14px!important;
     }
   }
   @media (max-width: 600px){
@@ -251,6 +268,15 @@ export const PostTitle = styled.div`
   }
 `
 export const PostThumbnail = styled.div`
+  @media only screen
+    and (min-device-width : 320px)
+    and (max-device-width : 568px)
+    and (orientation : portrait) {
+      img {
+        width: 120px;
+        height: 120px;
+      }
+    }
   img {
     width: 148px;
     height: 148px;
