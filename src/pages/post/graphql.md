@@ -1,7 +1,7 @@
 ---
-date: "2018-09-18"
-title: "Graphql is Love"
-tags: ['js','programming','react']
+title: Graphql is Love
+date: '2018-09-18'
+image: /assets/giphy.gif
 ---
 
 
