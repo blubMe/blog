@@ -71,7 +71,7 @@ export const NavbarWrapper = styled.header`
   background-color: white;
   width: 100%;
   @media (max-width: 600px) {
-    padding: 8px 16px;
+    padding: 8px 0;
   }
   padding: 12px 16px 24px 16px;
   position: sticky;
