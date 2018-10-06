@@ -160,7 +160,7 @@ export const Heroku = styled.div`
 export const Container = styled.div`
   margin: 0 auto;
   max-width: inherit;
-  padding: 0px 0 1.45rem;
+  padding: 0px 16px 1.45rem;
 `
 
 export const TitleSub3 = styled.h3`
@@ -315,7 +315,7 @@ export const Article = styled.main`
   padding: 0 16px;
   margin: 0 auto;
   h1 {
-      margin-top: 8px;
+      margin-top: 32px;
       font-size: 40px;
       line-height: 1.333em;
   }
@@ -374,7 +374,7 @@ export const Footer = styled.footer`
   display: flex;
   align-items: center;
   color: rgba(0, 3, 51, .76);
-  padding: 12px 0;
+  padding: 12px 16px;
   border-top: 1px solid #5100F4;
   font-size: 13px;
   font-weight: 500;
