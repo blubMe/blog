@@ -2,9 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-
 import Footer from './footer'
-import { Root,Container } from '../data/cssAPI'
+import { Root } from '../data/cssAPI'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -49,9 +48,7 @@ const Layout = ({ children }) => (
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="google-site-verification" content="EKB6SPfHL3fqp5rX6Kye6soq4SuWS1YtYsFnY2TRifA" />
         </Helmet>
-        <Container>
           {children}
-        </Container>
         <Footer />
       </Root>
     )}
