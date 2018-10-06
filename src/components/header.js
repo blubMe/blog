@@ -71,7 +71,7 @@ const Header = ({ siteTitle }) => (
 )
 
 export const HeaderPost = () => (
-  <NavbarWrapper>
+  <NavbarWrapper post>
       <Navbar>
       <p><Link to="/">
         {`← Back to home`}

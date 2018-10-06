@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link,graphql } from 'gatsby'
 
-import {Container,Heroku,TitleSub3,PostMain,Post,PostTitle,PostThumbnail,Aside} from '../data/cssAPI'
+import {Container,Heroku,TitleSub3,PostWrapper,PostMain,Post,PostTitle,PostThumbnail,Aside} from '../data/cssAPI'
 import Layout from '../components/layout'
 import Header from '../components/header'
 
@@ -50,7 +50,7 @@ const IndexPage = ({data}) => {
         <TitleSub3>
           Recent articles
         </TitleSub3>
-        <div style={{display: 'flex'}}>
+        <PostWrapper>
         <PostMain>
           { ql.edges.map(({node: n}) => (
                 <Post key={n.id}>
@@ -61,7 +61,14 @@ const IndexPage = ({data}) => {
                     <Link to={n.fields.slug}>
                       <p>{n.excerpt}</p>
                     </Link>
-                    <span>{n.frontmatter.date} - {n.timeToRead} min read</span>
+                    {n.timeToRead > 1
+                    ? (
+                      <span>{n.frontmatter.date} - {n.timeToRead} mins read</span>
+                      )
+                    : (
+                      <span>{n.frontmatter.date} - {n.timeToRead} min read</span>
+                      )
+                    }
                   </PostTitle>
                   <PostThumbnail>
                     <img src={n.frontmatter.image} alt=""/>
@@ -90,7 +97,7 @@ const IndexPage = ({data}) => {
             <AsideItemContent />
           </AsideItem> */}
         </Aside>
-        </div>
+        </PostWrapper>
       </Container>
     </Layout>
   )

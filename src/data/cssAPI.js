@@ -71,13 +71,18 @@ export const NavbarWrapper = styled.header`
   background-color: white;
   width: 100%;
   @media (max-width: 600px) {
-    padding: 8px 16px;
+    padding: 8px 0;
   }
   padding: 12px 16px 24px 16px;
   position: sticky;
   top: 0;
   z-index: 10;
   box-shadow: inset 0 -1px 0 #eee;
+  ${props => props.post && css`
+    @media (max-width: 600px) {
+      padding: 8px 16px;
+    }
+  `}
 `
 
 export const Navbar = styled.nav`
@@ -132,7 +137,6 @@ export const Heroku = styled.div`
   background-color: white;
   padding: 24px 0 12px;
   margin-bottom: 32px;
-  border-bottom: 1px solid #eee;
   position: relative;
   img{
     display: flex;
@@ -168,8 +172,12 @@ export const TitleSub3 = styled.h3`
   color: rgba(0, 3, 51, .76);
   @media (max-width: 600px) {
     font-size: 16px;
-    margin: 0;
   }
+`
+
+export const PostWrapper = styled.div`
+  display: flex;
+  border-top: 1px solid #eee;
 `
 
 export const PostMain = styled.main`
@@ -250,10 +258,6 @@ export const PostTitle = styled.div`
   }
   @media (max-width: 600px){
     padding-right: 8px;
-  }
-  span {
-    position: absolute;
-    bottom: 0;
   }
 `
 export const PostThumbnail = styled.div`

@@ -25,7 +25,14 @@ export default ({data}) => {
             <PostImg style={{backgroundImage: `url(${post.frontmatter.image})`}}/>
             <Article>
               <h1>{post.frontmatter.title}</h1>
-              <span>{`By fahmi on ${post.frontmatter.date} - ${post.timeToRead} min read`}</span>
+              {post.timeToRead > 1
+                    ? (
+                      <span>{`By fahmi on ${post.frontmatter.date} - ${post.timeToRead} mins read`}</span>
+                      )
+                    : (
+                      <span>{`By fahmi on ${post.frontmatter.date} - ${post.timeToRead} min read`}</span>
+                      )
+              }
               {isOldPost ? (
                 <div>
                   This post is over a year old. Some of the content may be out of
