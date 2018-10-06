@@ -1,7 +1,7 @@
 ---
 title: Graphql is Love
 date: '2018-09-18'
-image: /assets/giphy.gif
+image: /assets/asd.jpg
 ---
 
 
