@@ -65,16 +65,15 @@ export const Root = styled.div`
   width: 100%;
   max-width: 970px;
   margin: 0 auto;
-  padding: 0 16px;
 `
 
 export const NavbarWrapper = styled.header`
   background-color: white;
   width: 100%;
   @media (max-width: 600px) {
-    padding: 12px 0;
+    padding: 8px 16px;
   }
-  padding: 12px 0 24px;
+  padding: 12px 16px 24px 16px;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -271,6 +270,7 @@ export const PostThumbnail = styled.div`
     width: 148px;
     height: 148px;
     object-fit: cover;
+    background: #eee;
   }
 `
 
@@ -301,9 +301,18 @@ export const AsideItemContent = styled.div`
   padding: 0 8px;
 `
 
+export const PostImg = styled.div`
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-color: #eee;
+  background-position: center 50%;
+`
+
 export const Article = styled.main`
-  padding-top: 48px;
+  padding-top: 32px;
   max-width: 640px;
+  padding: 0 16px;
   margin: 0 auto;
   h1 {
       margin-top: 8px;
@@ -318,7 +327,7 @@ export const Article = styled.main`
       margin-block-end: 1em;
   }
   @media (max-width: 700px) {
-    padding-top: 32px;
+    padding-top: 18px;
     p {
       margin: 12px 0;
     }

@@ -4,7 +4,7 @@ import Helmet from "react-helmet"
 
 import { HeaderPost } from '../components/header'
 import Layout from '../components/layout'
-import {Article,ArticleContent} from '../data/cssAPI'
+import {Article,ArticleContent,PostImg} from '../data/cssAPI'
 
 export default ({data}) => {
     const post = data.markdownRemark
@@ -21,6 +21,8 @@ export default ({data}) => {
               <meta property="og:title" content={post.frontmatter.title} />
               <meta property="og:description" content={post.excerpt} />
             </Helmet>
+            {/* <img src={post.frontmatter.image}/> */}
+            <PostImg style={{backgroundImage: `url(${post.frontmatter.image})`}}/>
             <Article>
               <h1>{post.frontmatter.title}</h1>
               <span>{`By fahmi on ${post.frontmatter.date} - ${post.timeToRead} min read`}</span>
@@ -48,8 +50,8 @@ export const query = graphql`
       excerpt
       timeToRead
       frontmatter {
+        image
         title
-        tags
         date(formatString: "DD MMMM, YYYY")
       }
     }
