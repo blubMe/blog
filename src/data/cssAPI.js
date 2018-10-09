@@ -394,3 +394,32 @@ export const Footer = styled.footer`
     }
   }
 `
+
+export const FooterPost = styled.div`
+  border-top: 1px solid #eee;
+  margin-top: 32px;
+  text-align: center;
+  padding: 8px 0;
+  height: 200px;
+
+  @media (max-width: 700px) {
+    h3 {
+    line-height: .8em;
+    }
+    height: 180px;
+  }
+`
+
+// components
+
+export const ButtonURL = styled.a`
+  border: 2px solid #5100F4;
+  border-radius: 3px;
+  padding: 10px 15px;
+  color: #5100F4;
+  cursor: pointer;
+  :hover {
+      background: #5100F4;
+      color: white;
+    }
+`

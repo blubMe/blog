@@ -2,6 +2,7 @@
 title: Graphql is Love
 date: '2018-09-18'
 image: /assets/asd.jpg
+file: 'graphql.md'
 ---
 
 

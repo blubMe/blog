@@ -14,6 +14,7 @@ collections:
     create: true
     fields:
       - { name: title, label: Title }
+      - { name: file, label: File }
       - { name: date, label: Create At, widget: date }
       - { name: body, label: Post, widget: markdown }
       - { name: image, label: Image, widget: image}
