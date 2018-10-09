@@ -406,7 +406,6 @@ export const FooterPost = styled.div`
     h3 {
     line-height: .8em;
     }
-    height: 180px;
   }
 `
 
