@@ -323,12 +323,15 @@ export const Article = styled.main`
       font-size: 40px;
       line-height: 1.333em;
   }
-  p {
+  p, li{
       font-size: 1em;
       color: rgba(0,3,51,.76);
       line-height: 1.9em;
       margin-block-start: 1em;
       margin-block-end: 1em;
+  }
+  li {
+    line-height: normal;
   }
   @media (max-width: 700px) {
     padding-top: 18px;
@@ -343,11 +346,15 @@ export const Article = styled.main`
     }
   }
   span {
-    color: rgba(0,0,0,.54);
     font-weight: 500;
     font-size: 15px;
   }
 `
+
+export const TextAdditional = styled.span`
+  color: rgba(0,0,0,.54);
+`
+
 export const ArticleContent = styled.article`
   padding-top: 32px;
   a {
@@ -362,6 +369,9 @@ export const ArticleFooter = styled.div`
   align-items: center;
   padding-top: 24px;
   color: #5100F4;
+  span {
+    color: rgba(0,0,0);
+  }
   p {
     width: 250px;
     white-space: nowrap;

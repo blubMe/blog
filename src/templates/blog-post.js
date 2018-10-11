@@ -4,7 +4,7 @@ import Helmet from "react-helmet"
 
 import { HeaderPost } from '../components/header'
 import Layout from '../components/layout'
-import {Article,ArticleContent,PostImg,FooterPost,ButtonURL} from '../data/cssAPI'
+import {Article,ArticleContent,TextAdditional,PostImg,FooterPost,ButtonURL} from '../data/cssAPI'
 
 export default ({data}) => {
     const post = data.markdownRemark
@@ -27,10 +27,10 @@ export default ({data}) => {
               <h1>{post.frontmatter.title}</h1>
               {post.timeToRead > 1
                     ? (
-                      <span>{`By fahmi on ${post.frontmatter.date} - ${post.timeToRead} mins read`}</span>
+                      <TextAdditional>{`By fahmi on ${post.frontmatter.date} - ${post.timeToRead} mins read`}</TextAdditional>
                       )
                     : (
-                      <span>{`By fahmi on ${post.frontmatter.date} - ${post.timeToRead} min read`}</span>
+                      <TextAdditional>{`By fahmi on ${post.frontmatter.date} - ${post.timeToRead} min read`}</TextAdditional>
                       )
               }
               {isOldPost ? (
@@ -41,7 +41,7 @@ export default ({data}) => {
               ) : null}
               <ArticleContent dangerouslySetInnerHTML={{ __html: post.html}} />
               <FooterPost>
-                <h3>Thanks for reading 🎉</h3>
+                <h3>Thanks for reading <span role="img" aria-label="hooray">🎉</span></h3>
                 <p>You can improve this article or even fix it freely.</p>
                 <ButtonURL
                   id={post.frontmatter.file.id}
