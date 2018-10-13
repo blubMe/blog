@@ -10,7 +10,7 @@ export default ({data}) => {
     const post = data.markdownRemark
     const dateToday = new Date()
     const dateLate = new Date(post.frontmatter.date)
-    const isOldPost = (dateToday - dateLate) / (1000 * 3600 * 24 * 365) < 1;
+    const isOldPost = (dateToday - dateLate) / (1000 * 3600 * 24 * 365) > 1;
     if(!data) return null
     return (
         <Layout>
