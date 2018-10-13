@@ -313,6 +313,14 @@ export const PostImg = styled.div`
   background-position: center 50%;
 `
 
+export const Alert = styled.div`
+  padding: 10px 15px;
+  background: #0078ff;
+  border-radius: 3px;
+  color: white;
+  margin-top: 14px;
+`
+
 export const Article = styled.main`
   padding-top: 32px;
   max-width: 640px;
@@ -359,7 +367,6 @@ export const TextAdditional = styled.span`
 `
 
 export const ArticleContent = styled.article`
-  padding-top: 32px;
   a {
     color: #5100F4;
     text-decoration: underline;
