@@ -4,7 +4,7 @@ import Helmet from "react-helmet"
 
 import { HeaderPost } from '../components/header'
 import Layout from '../components/layout'
-import {Article,ArticleContent,TextAdditional,PostImg,FooterPost,ButtonURL} from '../data/cssAPI'
+import {Article,ArticleContent,Alert,TextAdditional,PostImg,FooterPost,ButtonURL} from '../data/cssAPI'
 
 export default ({data}) => {
     const post = data.markdownRemark
@@ -34,10 +34,10 @@ export default ({data}) => {
                       )
               }
               {isOldPost ? (
-                <div>
+                <Alert>
                   This post is over a year old. Some of the content may be out of
                   date.
-                </div>
+                </Alert>
               ) : null}
               <ArticleContent dangerouslySetInnerHTML={{ __html: post.html}} />
               <FooterPost>
