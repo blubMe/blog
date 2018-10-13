@@ -53,7 +53,7 @@ injectGlobal`
       padding: 1.6em;
       overflow: auto;
       code {
-        color: #333;
+        /* color: #333; */
       }
     }
     video {
