@@ -349,6 +349,9 @@ export const Article = styled.main`
     font-weight: 500;
     font-size: 15px;
   }
+  img {
+    width: 100%;
+  }
 `
 
 export const TextAdditional = styled.span`
