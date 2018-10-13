@@ -1,18 +1,16 @@
 ---
 title: Graphql is Love
+file: graphql.md
 date: '2018-09-18'
 image: /assets/asd.jpg
-file: 'graphql.md'
 ---
-
-
 ## Sedisti civiliter
 
 Lorem **markdownum** Ixione palus **semper peritura barbaque** in aureus
 obliquum erigitur gemmae utque cur natus, aera supplice de nudae. Manus
 ambrosiam tendens, saecula tenet, conponere et ense et cucurri. Tantique
 animalia praeceps Meleagre greges venisse corpore et ignara, umquam ipse? Quam
-*Talibus ausis*.
+_Talibus ausis_.
 
 ## Vultusque subsequitur Pallas regis datis inde animaque
 
@@ -61,3 +59,7 @@ Sub quid deprenderat mores postquam tectoque maiestatemque debebat quibus;
 subitam amittere illius esse dona. Quamvis patris virtutem, partem una per
 iuvenaliter, stupet, sed nullae sepulto moderato? Nec phaedimus aequoris dixit.
 Hic bis parenti: e petunt satis.
+
+
+
+![devil](/assets/asd.jpg)
