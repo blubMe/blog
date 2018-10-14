@@ -5,6 +5,7 @@ import Helmet from "react-helmet"
 import { HeaderPost } from '../components/header'
 import Layout from '../components/layout'
 import ArticlePost from './modules/article'
+import ArticleBar from './modules/article-bar'
 
 export default ({data}) => {
     const post = data.contentfulBlogPost
@@ -26,6 +27,7 @@ export default ({data}) => {
               <meta name="twitter:image" content={post.header.fluid.src} />
           </Helmet>
           <ArticlePost key={post.id} data={post} old={isOldPost} img={post.header.fluid}/>
+          <ArticleBar />
         </Layout>
     )
 }

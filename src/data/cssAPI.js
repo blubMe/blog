@@ -324,7 +324,7 @@ export const Alert = styled.div`
 
 export const Article = styled.main`
   padding-top: 32px;
-  max-width: 640px;
+  max-width: 680px;
   padding: 0 16px;
   margin: 0 auto;
   h1 {
@@ -441,5 +441,42 @@ export const ButtonURL = styled.a`
   :hover {
       background: #5100F4;
       color: white;
+    }
+`
+
+// bar
+
+export const MenuBar = styled.nav`
+    display: none;
+    @media (max-width: 600px){
+      background-color: #f9f9f9;
+      border-top: 1px solid #e2e2e2;
+      bottom: 0;
+      display: flex;
+      padding: 10px 15px;
+      min-width: 320px;
+      position: fixed;
+      transition: background-color .5s;
+      width: 100%;
+      z-index: 500;
+      a {
+        -webkit-tap-highlight-color: rgba(255,255,255,0);
+        cursor: pointer;
+        flex-basis: 100%;
+        display: block;
+        margin: auto;
+        color: rgba(0,3,51,.76);
+        text-align: center;
+        img {
+          display: block;
+          height: 19px;
+          margin: auto;
+          width: 19px;
+        }
+        span {
+          font-size: 10px;
+          font-weight: bold;
+        }
+      }
     }
 `
