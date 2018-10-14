@@ -19,7 +19,7 @@ const IndexPage = ({data}) => {
         <PostWrapper>
         <PostMain>
           {data.allContentfulBlogPost.edges.map(({node}) => (
-            <PostListing key={node.id} post={node} img={node.header} timeToRead={node.article.childMarkdownRemark.timeToRead} date={node.createdAt}/>
+            <PostListing key={node.id} post={node} slug={node.slug} img={node.header} timeToRead={node.article.childMarkdownRemark.timeToRead} date={node.createdAt}/>
           )) }
         </PostMain>
         </PostWrapper>
