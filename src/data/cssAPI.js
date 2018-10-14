@@ -309,6 +309,9 @@ export const PostImg = styled.img`
   width: 100%;
   height: 300px;
   object-fit: cover;
+  @media (max-width: 600px){
+    height: 200px;
+  }
 `
 
 export const Alert = styled.div`
