@@ -1,5 +1,5 @@
 import React from 'react'
-import {Article,ArticleContent,PostImg,FooterPost,ButtonURL} from '../../data/cssAPI'
+import {Article,ArticleContent,PostImg} from '../../data/cssAPI'
 import ArticleTitle from './article-title'
 
 const ArticlePost = ({data,old,img}) => (
