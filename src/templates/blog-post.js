@@ -21,6 +21,9 @@ export default ({data}) => {
               <meta name="description" content={postArticle.excerpt} />
               <meta property="og:title" content={post.title} />
               <meta property="og:description" content={postArticle.excerpt} />
+              <meta name="image" content={post.header.fluid.src} />
+              <meta property="og:image" content={post.header.fluid.src} />
+              <meta name="twitter:image" content={post.header.fluid.src} />
           </Helmet>
           <ArticlePost key={post.id} data={post} old={isOldPost} img={post.header.fluid}/>
         </Layout>
@@ -46,8 +49,8 @@ export const query = graphql`
       header {
         id
         fluid {
-          srcWebp
-          srcSetWebp
+          src
+          srcSet
         }
       }
       slug

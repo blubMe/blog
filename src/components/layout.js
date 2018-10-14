@@ -47,6 +47,7 @@ const Layout = ({ children }) => (
           <meta name="format-detection" content="telephone=no" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="google-site-verification" content="EKB6SPfHL3fqp5rX6Kye6soq4SuWS1YtYsFnY2TRifA" />
+          <meta name="nightowl" content="https://goo.gl/SdfcZp" />
         </Helmet>
           {children}
         <Footer />

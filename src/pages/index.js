@@ -19,7 +19,16 @@ const IndexPage = ({data}) => {
         <PostWrapper>
         <PostMain>
           {data.allContentfulBlogPost.edges.map(({node}) => (
-            <PostListing key={node.id} post={node} title={node.title} excerpt={node.article.childMarkdownRemark.excerpt} slug={node.slug} img={node.header.fluid.srcWebp} imgset={node.header.fluid.srcSetWebp} imgid={node.header.id} timeToRead={node.article.childMarkdownRemark.timeToRead} date={node.createdAt}/>
+            <PostListing
+            key={node.id}
+            post={node}
+            title={node.title}
+            excerpt={node.article.childMarkdownRemark.excerpt}
+            slug={node.slug} img={node.header.fluid.src}
+            imgset={node.header.fluid.srcSet}
+            imgid={node.header.id}
+            timeToRead={node.article.childMarkdownRemark.timeToRead}
+            date={node.createdAt}/>
           )) }
         </PostMain>
         </PostWrapper>
@@ -53,8 +62,8 @@ export const query = graphql`
           header {
             id
             fluid {
-              srcWebp
-              srcSetWebp
+              src
+              srcSet
             }
           }
           createdAt(fromNow: true)
