@@ -2,7 +2,7 @@ import React from 'react'
 import Link from "gatsby-link"
 import {Post,PostTitle,PostThumbnail} from '../../data/cssAPI'
 
-const PostListing = ({slug,excerpt,timeToRead,title,date,img}) => (
+const PostListing = ({slug,excerpt,timeToRead,title,date,img,imgset,imgid}) => (
     <Post>
         <PostTitle>
             <Link to={slug}>
@@ -16,7 +16,7 @@ const PostListing = ({slug,excerpt,timeToRead,title,date,img}) => (
             }
         </PostTitle>
         <PostThumbnail>
-            <img src={img.fluid.srcWebp + `&fl=progressive`} srcSet={img.fluid.srcSetWebp} id={img.id} alt=""/>
+            <img src={img + `&fl=progressive`} srcSet={imgset} id={imgid} alt=""/>
         </PostThumbnail>
     </Post>
 )
