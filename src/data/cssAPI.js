@@ -305,12 +305,10 @@ export const AsideItemContent = styled.div`
   padding: 0 8px;
 `
 
-export const PostImg = styled.div`
+export const PostImg = styled.img`
   width: 100%;
   height: 300px;
-  background-size: cover;
-  background-color: #eee;
-  background-position: center 50%;
+  object-fit: cover;
 `
 
 export const Alert = styled.div`

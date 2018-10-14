@@ -4,56 +4,25 @@ import Helmet from "react-helmet"
 
 import { HeaderPost } from '../components/header'
 import Layout from '../components/layout'
-import {Article,ArticleContent,Alert,TextAdditional,PostImg,FooterPost,ButtonURL} from '../data/cssAPI'
+import ArticlePost from './modules/article'
 
 export default ({data}) => {
-    const post = data.markdownRemark
+    const post = data.contentfulBlogPost
+    const postArticle = post.article.childMarkdownRemark
     const dateToday = new Date()
-    const dateLate = new Date(post.frontmatter.date)
-    const isOldPost = (dateToday - dateLate) / (1000 * 3600 * 24 * 365) > 1;
-    if(!data) return null
+    const dateLate = new Date(post.createAt)
+    const isOldPost = (dateToday - dateLate) / (1000 * 3600 * 24 * 365) > 1
+
     return (
         <Layout>
-            <HeaderPost siteTitle={data.site.siteMetadata.title}/>
-            <Helmet>
-              <title>{`${post.frontmatter.title}`}</title>
-              <meta name="description" content={post.excerpt} />
-              <meta property="og:title" content={post.frontmatter.title} />
-              <meta property="og:description" content={post.excerpt} />
-            </Helmet>
-            {/* <img src={post.frontmatter.image}/> */}
-            <PostImg style={{backgroundImage: `url(${post.frontmatter.image})`}}/>
-            <Article id={post.id}>
-              <h1>{post.frontmatter.title}</h1>
-              {post.timeToRead > 1
-                    ? (
-                      <TextAdditional>{`By fahmi on ${post.frontmatter.date} - ${post.timeToRead} mins read`}</TextAdditional>
-                      )
-                    : (
-                      <TextAdditional>{`By fahmi on ${post.frontmatter.date} - ${post.timeToRead} min read`}</TextAdditional>
-                      )
-              }
-              {isOldPost ? (
-                <Alert>
-                  This post is over a year old. Some of the content may be out of
-                  date.
-                </Alert>
-              ) : null}
-              <ArticleContent dangerouslySetInnerHTML={{ __html: post.html}} />
-              <FooterPost>
-                <h3>Thanks for reading <span role="img" aria-label="hooray">🎉</span></h3>
-                <p>You can improve this article or even fix it freely.</p>
-                <ButtonURL
-                  id={post.frontmatter.file.id}
-                  href={`https://github.com/blubMe/blog/blob/master/src/pages/post/${post.frontmatter.file.name + post.frontmatter.file.ext}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Improve this article
-                </ButtonURL>
-              </FooterPost>
-            </Article>
-
+          <HeaderPost siteTitle={data.site.siteMetadata.title}/>
+          <Helmet>
+              <title>{`${post.title}`}</title>
+              <meta name="description" content={postArticle.excerpt} />
+              <meta property="og:title" content={post.title} />
+              <meta property="og:description" content={postArticle.excerpt} />
+          </Helmet>
+          <ArticlePost key={post.id} data={post} old={isOldPost} img={post.header.fluid}/>
         </Layout>
     )
 }
@@ -65,20 +34,24 @@ export const query = graphql`
         title
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      id
-      excerpt
-      timeToRead
-      frontmatter {
-        image
-        title
-        file {
-          name
-          ext
-          id
+    contentfulBlogPost(slug: {eq: $slug}){
+      title
+      article{
+        childMarkdownRemark {
+          html
+          excerpt
+          timeToRead
         }
-        date(formatString: "DD MMMM, YYYY")
       }
+      header {
+        id
+        fluid {
+          srcWebp
+          srcSetWebp
+        }
+      }
+      slug
+      id
+      createdAt(formatString: "DD MMMM, YYYY")
     }
   }`

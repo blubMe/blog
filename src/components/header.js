@@ -41,7 +41,7 @@ const itemsCategory = [
   },
 ]
 
-const Header = ({ siteTitle }) => (
+const HeaderBase = ({ siteTitle }) => (
   <NavbarWrapper>
       <Navbar>
       <p><Link to="/changelogs">
@@ -99,4 +99,4 @@ export const HeaderPost = () => (
   </NavbarWrapper>
 )
 
-export default Header
+export default HeaderBase
